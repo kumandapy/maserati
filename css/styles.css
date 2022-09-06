@@ -1,0 +1,1184 @@
+html{
+  height: 100%;
+}
+.img-fit{
+  width: 100%;
+  height: 361px;
+  object-fit: cover;
+  margin-bottom: 20px;
+}
+body{
+  height: 100%;
+  font-family: 'Roboto Condensed', sans-serif;
+}
+h1,h2,h3{
+  font-family: 'Roboto Condensed', sans-serif;
+}
+a{
+  color: #333333 !important;
+}
+a:hover{
+  background-color: transparent !important;
+  text-decoration: none !important;
+}
+/*nav*/
+.nav-wrapper{
+  /*position: fixed;*/
+  z-index: 200;
+  width: 100%;
+}
+.navbar-main {
+  overflow: hidden;
+  background-color: #ffffff;
+  width: 100%;
+}
+
+.navbar-main .logo-box {
+  float: left;
+  font-size: 16px;
+  color: white;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+}
+
+.subnav {
+  float: left;
+  overflow: hidden;
+  height: 94px;
+  z-index: 99;
+}
+
+.subnav .subnavbtn {
+  font-size: 16px;
+  border: none;
+  outline: none;
+  color: #0c2340;
+  padding: 14px 16px;
+  background-color: inherit;
+  margin: 0;
+  height: 94px;
+  cursor: pointer;
+  font-family: 'Roboto Condensed', sans-serif;
+  font-weight: 300;
+  z-index: 4;
+}
+
+.navbar-main a:hover, .subnav:hover .subnavbtn {
+  /*border-bottom: #0c2340 2px solid;*/
+}
+
+.subnav-content {
+  /*visibility: hidden;*/
+  /*opacity: 0;*/
+  display: none;
+  position: absolute;
+  left: 0;
+  background-color: #ffffff;
+  width: 100%;
+  z-index: 199;
+  /*transition: visibility 0s, opacity 0.5s linear;*/
+}
+.title-subnav-item{
+  padding-top: 20px;
+  color: #0c2340;
+  font-size: 24px;
+  display: flex;
+  justify-content: center;
+  font-weight: 300;
+  font-family: 'Roboto Condensed', sans-serif;
+}
+.title-subnav-item-links{
+  padding-top: 20px;
+  color: #0c2340;
+  font-size: 24px;
+  display: flex;
+  font-weight: 300;
+  font-family: 'Roboto Condensed', sans-serif;
+}
+.link-item{
+  font-weight: 300;
+  color: #555555;
+  margin-bottom: 7px;
+  cursor: pointer;
+}
+.boder-right-grey{
+  border-right: #f2f1f0 1px solid;
+}
+
+@keyframes fade-in {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes fade-out {
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: 0;
+  }
+}
+
+.subnav-content a {
+  float: left;
+  color: white;
+  text-decoration: none;
+}
+
+.subnav-content a:hover {
+  background-color: #eee;
+  color: black;
+}
+
+.subnav:hover .subnav-content {
+
+  display: block;
+  /*visibility: visible;*/
+  /*opacity: 1;*/
+  animation: fade-in 1s;
+}
+
+.logo-box{
+  padding: 0 60px !important;
+}
+.logo {
+  background: transparent url('../img/maserati_logo_original.svg') no-repeat 50% 50%;
+  background-size: 100%;
+  width: 125px;
+  height: 90px;
+}
+
+.close {
+  display: block;
+  background: transparent url('../img/icons/arrow.svg') no-repeat 50% 50%;
+  background-size: contain;
+  height: 10px;
+  width: 10px;
+  -webkit-transform: rotate(180deg);
+  transform: rotate(180deg);
+  -webkit-transition: -webkit-transform .2s ease;
+  transition: -webkit-transform .2s ease;
+  transition: transform .2s ease;
+  transition: transform .2s ease,-webkit-transform .2s ease;
+}
+.subnav:hover .close{
+  -webkit-transform: rotate(0deg);
+  transform: rotate(0deg);
+}
+
+/*CAROUSEL*/
+
+@media only screen and (min-width: 1000px) {
+  .image-carousel{
+    height: calc(100vh - 94px);
+  }
+}
+.carousel-control-next-icon, .carousel-control-prev-icon {
+  display: inline-block;
+  width: 50px;
+  height: 50px;
+  background: no-repeat 50%/100% 100%;
+}
+.carousel-control-prev-icon {
+  background-image: url('../img/icons/prev.svg');
+}
+.carousel-control-next-icon {
+  background-image: url('../img/icons/next.svg');
+}
+.carousel-indicators{
+  margin-right: 3%;
+  margin-left: 3%;
+}
+.carousel-control-next, .carousel-control-prev {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  z-index: 1;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-align: center;
+  align-items: center;
+  -ms-flex-pack: center;
+  justify-content: inherit !important;
+  width: 15%;
+  color: #fff;
+  text-align: center;
+  opacity: .5;
+  transition: opacity .15s ease;
+}
+.carousel-control-next{
+  justify-content: flex-end !important;
+}
+#carouselMaserati .carousel-caption{
+  padding-bottom: 1px !important;
+  position: absolute;
+  right: 3%;
+  left: 3%;
+  bottom: 0px !important;
+  z-index: 10;
+  padding-top: 0px !important;
+  color: #fff;
+  text-align: center;
+}
+
+#carouselMaserati .carousel-caption-button{
+  display: flex;
+  justify-content: flex-end;
+  position: absolute;
+  right: 3%;
+  left: 3%;
+  bottom: 0px !important;
+  z-index: 11;
+  padding-top: 0px !important;
+  color: #fff;
+  margin-bottom: 39px;
+  font-family: 'Roboto Condensed', sans-serif;
+}
+
+#carouselMaserati .carousel-caption-button a{
+  color: #333333;
+  background-color: white;
+  border: none;
+}
+.carousel-indicators-action{
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  z-index: 15;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-pack: center;
+  justify-content: flex-end;
+  padding-left: 0;
+  margin-right: 3%;
+  margin-left: 3%;
+  list-style: none;
+  margin-bottom: 10px;
+}
+.action-position{
+  margin-right: 200px;
+}
+.navigation-pause{
+  background-image: url('../img/icons/pause.svg');
+  position: relative;
+  display: inline-block;
+  margin-right: 1pt;
+  width: 9pt;
+  height: 9pt;
+  cursor: pointer;
+}
+
+.navigation-play{
+  background-image: url('../img/icons/play.svg');
+  position: relative;
+  display: inline-block;
+  margin-right: 2pt;
+  width: 9pt;
+  height: 9pt;
+  cursor: pointer;
+}
+
+.carousel-indicators{
+  right: 0;
+  bottom: 0;
+  left: inherit !important;
+  justify-content: flex-end !important;
+}
+.carousel-indicators li {
+  width: 10px;
+  height: 10px;
+  margin-right: 9px!important;
+  border: 1px solid #fff;
+  border-radius: 50%;
+  cursor: pointer;
+  background-color: transparent;
+}
+.carousel-indicators .active {
+  opacity: 1;
+  background-color: white;
+}
+.title-slider{
+  font-size: 52px;
+  font-weight: 300;
+  font-family: 'Roboto Condensed', sans-serif;
+  margin-right: 20px;
+}
+.divider-text{
+  height: 100px;
+  width: 1px;
+  background-color: white;
+}
+.text-slider{
+  display: flex;
+  align-items: center;
+  margin-left: 30px;
+  font-size: 20px;
+  font-family: 'Roboto Condensed', sans-serif;
+}
+.slick-prev{
+
+}
+.slick-next{
+
+}
+
+/*MODELOS*/
+.componentIntro {
+  width: 100%;
+  background: #f2f1f0;
+}
+.componentIntro .text {
+  padding: 45px 0;
+  display: table;
+}
+.componentIntro .text .title {
+  margin: 0;
+  font-size: 42px;
+  letter-spacing: -.02em;
+  line-height: 1.1;
+  height: 60px;
+  font-family: 'Roboto Condensed', sans-serif;
+  color: #333;
+  padding-left: 60px;
+  white-space: nowrap;
+}
+.componentIntro .text div {
+  display: table-cell;
+  vertical-align: middle;
+}
+
+
+
+/*  BURGER
+========================================== */
+
+.burger {
+  width: 50px;
+  height: 50px;
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  border-radius: 4px;
+  z-index: 300;
+}
+
+.burger span {
+  position: relative;
+  margin-top: 9px;
+  margin-bottom: 9px;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  margin-left: -15px;
+  margin-top: -1.5px;
+}
+.burger span, .burger span::before, .burger span::after {
+  border-radius: 14px;
+  display: block;
+  width: 30px;
+  height: 3px;
+  background-color: #333;
+  outline: 1px solid transparent;
+  -webkit-transition-property: background-color, -webkit-transform;
+  -moz-transition-property: background-color, -moz-transform;
+  -o-transition-property: background-color, -o-transform;
+  transition-property: background-color, transform;
+  -webkit-transition-duration: 0.3s;
+  -moz-transition-duration: 0.3s;
+  -o-transition-duration: 0.3s;
+  transition-duration: 0.3s;
+}
+
+.burger span::before, .burger span::after {
+  position: absolute;
+  content: "";
+}
+
+.burger span::before {
+  top: -9px;
+}
+
+.burger span::after {
+  top: 9px;
+}
+
+.burger.clicked span {
+  background-color: transparent;
+}
+
+.burger.clicked span::before {
+  -webkit-transform: translateY(9px) rotate(45deg);
+  -moz-transform: translateY(9px) rotate(45deg);
+  -ms-transform: translateY(9px) rotate(45deg);
+  -o-transform: translateY(9px) rotate(45deg);
+  transform: translateY(9px) rotate(45deg);
+}
+
+.burger.clicked span::after {
+  -webkit-transform: translateY(-9px) rotate(-45deg);
+  -moz-transform: translateY(-9px) rotate(-45deg);
+  -ms-transform: translateY(-9px) rotate(-45deg);
+  -o-transform: translateY(-9px) rotate(-45deg);
+  transform: translateY(-9px) rotate(-45deg);
+}
+
+.burger.clicked span:before, .burger.clicked span:after {
+  /*background-color: #ffffff;*/
+}
+
+.burger:hover {
+  cursor: pointer;
+}
+
+/*nav*/
+
+
+/*  NAV
+========================================== */
+.bg-menu {
+  z-index: 290;
+  background-repeat: no-repeat;
+  background-position: right;
+  background-size: contain;
+}
+
+.bg-nav-menu-logo {
+  position: relative;
+}
+
+.logo-nav {
+  position: absolute;
+  width: 100%;
+  top: -70px;
+}
+
+@media (max-width: 768px) {
+  .logo-nav {
+    display: none !important;
+  }
+
+  .bg-menu {
+    background-image: none !important;
+  }
+}
+
+nav {
+  background-color: #ffffff;
+  position: fixed;
+  z-index: 1000;
+  top: 0;
+  right: 0;
+  height: 100%;
+  max-width: 100%;
+  width: 100%;
+  padding-top: 100px;
+  /*padding: 100px 40px 60px 40px;*/
+  overflow-y: auto;
+  -webkit-transform: translateX(100%);
+  -moz-transform: translateX(100%);
+  -ms-transform: translateX(100%);
+  -o-transform: translateX(100%);
+  transform: translateX(100%);
+  -webkit-transition: transform 0.55s cubic-bezier(0.785, 0.135, 0.15, 0.86);
+  -moz-transition: transform 0.55s cubic-bezier(0.785, 0.135, 0.15, 0.86);
+  -o-transition: transform 0.55s cubic-bezier(0.785, 0.135, 0.15, 0.86);
+  transition: transform 0.55s cubic-bezier(0.785, 0.135, 0.15, 0.86);
+}
+
+nav.show {
+  -webkit-transform: translateX(0px);
+  -moz-transform: translateX(0px);
+  -ms-transform: translateX(0px);
+  -o-transform: translateX(0px);
+  transform: translateX(0px);
+}
+
+nav.show ul.main li {
+  -webkit-transform: translateX(0px);
+  -moz-transform: translateX(0px);
+  -ms-transform: translateX(0px);
+  -o-transform: translateX(0px);
+  transform: translateX(0px);
+  opacity: 1;
+}
+
+nav.show ul.main li:nth-child(1) {
+  transition-delay: 0.15s;
+}
+
+nav.show ul.main li:nth-child(2) {
+  transition-delay: 0.3s;
+}
+
+nav.show ul.main li:nth-child(3) {
+  transition-delay: 0.45s;
+}
+
+nav.show ul.main li:nth-child(4) {
+  transition-delay: 0.6s;
+}
+
+nav.show ul.main li:nth-child(5) {
+  transition-delay: 0.75s;
+}
+
+nav.show ul.main li:nth-child(6) {
+  transition-delay: 0.9s;
+}
+
+nav.show ul.main li:nth-child(7) {
+  transition-delay: 1.05s;
+}
+
+nav.show ul.main li:nth-child(8) {
+  transition-delay: 1.2s;
+}
+
+nav.show ul.main li:nth-child(9) {
+  transition-delay: 1.35s;
+}
+
+nav.show .about, nav.show .social, nav.show ul.sub {
+  -webkit-transform: translateY(0px);
+  -moz-transform: translateY(0px);
+  -ms-transform: translateY(0px);
+  -o-transform: translateY(0px);
+  transform: translateY(0px);
+  opacity: 1;
+  transition-delay: .85s;
+}
+
+.link-mobile{
+  width: 100%;
+  display: inline-block;
+  border-bottom: .5px solid #f2f1f0;
+  padding-left: 20px;
+  line-height: 2.5;
+  font-family: 'Roboto Condensed', sans-serif;
+  color: #333333;
+  font-size: 24px;
+  font-weight: 300;
+}
+.link-mobile:hover{
+  text-decoration: none;
+  color: #333333;
+}
+ul{
+  padding: 0 0;
+}
+.mobile_menu{
+  padding-top: 0;
+  padding-bottom: 0;
+  overflow: hidden;
+  margin: 0;
+  list-style: none;
+  color: #666;
+  font-size: 15px;
+  letter-spacing: 0;
+  line-height: 2.35;
+  font-size: 1pc;
+  display: none;
+}
+.mobile_menu li{
+  text-transform: uppercase;
+  display: block;
+  font-size: 18px;
+  letter-spacing: .025em;
+  line-height: 2.5;
+  color: #666;
+  text-decoration: none;
+  padding: 0;
+  padding-left: 40px;
+  margin-bottom: 2px;
+  background-color: #f7f7f7;
+}
+ul li.has-separator:not(:last-of-type) {
+  position: relative;
+}
+.mobile_menu li a{
+  text-decoration: none;
+  color: #333;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  height: 60px;
+  font-size: 18px;
+}
+
+@media (min-width: 667px) {
+
+  nav {
+    /*padding: 120px 90px 70px 90px;*/
+  }
+}
+
+nav ul.main {
+  list-style-type: none;
+}
+
+nav ul.main li {
+  -webkit-transform: translateX(40px);
+  -moz-transform: translateX(40px);
+  -ms-transform: translateX(40px);
+  -o-transform: translateX(40px);
+  transform: translateX(40px);
+  opacity: 0;
+  -webkit-transition: all 0.3s ease;
+  -moz-transition: all 0.3s ease;
+  -o-transition: all 0.3s ease;
+  transition: all 0.3s ease;
+}
+
+nav ul.main li:last-of-type {
+  margin-bottom: 0px;
+}
+
+nav ul.main li a {
+  color: #82577b;
+  font-family: 'PT Serif', serif;
+  text-decoration: none;
+  text-transform: uppercase;
+  font-size: 1.5rem;
+  display: block;
+  letter-spacing: 5px;
+  font-weight: 600;
+  -webkit-transition: all 0.3s ease;
+  -moz-transition: all 0.3s ease;
+  -o-transition: all 0.3s ease;
+  transition: all 0.3s ease;
+
+}
+
+nav ul.main li .nav-link {
+  padding: 0 !important;
+  max-width: 250px;
+  border-bottom: 1px solid #b7ac7f;
+  font-size: 18px !important;
+  text-transform: capitalize;
+}
+
+nav ul.main li a span {
+  color: #b7ac7f;
+}
+
+nav ul.main li a:hover {
+  color: #b7ac7f;
+}
+
+nav .about {
+  margin-top: 40px;
+  -webkit-transform: translateY(30px);
+  -moz-transform: translateY(30px);
+  -ms-transform: translateY(30px);
+  -o-transform: translateY(30px);
+  transform: translateY(30px);
+  opacity: 0;
+  -webkit-transition: all 0.4s ease;
+  -moz-transition: all 0.4s ease;
+  -o-transition: all 0.4s ease;
+  transition: all 0.4s ease;
+}
+
+nav .about p {
+  color: #ffffff;
+  font-family: "Spectral", serif;
+  font-size: 1.05rem;
+  letter-spacing: 0.5px;
+  line-height: 170%;
+}
+
+nav .social {
+  margin-top: 40px;
+  position: relative;
+  padding-bottom: 30px;
+  -webkit-transform: translateY(30px);
+  -moz-transform: translateY(30px);
+  -ms-transform: translateY(30px);
+  -o-transform: translateY(30px);
+  transform: translateY(30px);
+  opacity: 0;
+  -webkit-transition: all 0.4s ease;
+  -moz-transition: all 0.4s ease;
+  -o-transition: all 0.4s ease;
+  transition: all 0.4s ease;
+}
+
+nav .social:after {
+  content: "";
+  width: 230px;
+  height: 2px;
+  background-color: #b7ac7f;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+}
+
+nav .social a {
+  display: inline-block;
+  width: 30px;
+  height: 30px;
+  margin-right: 25px;
+}
+
+nav .social a:last-of-type {
+  margin-right: 0px;
+}
+
+nav .social a:hover svg path, nav .social a:hover svg circle {
+  fill: #b7ac7f;
+}
+
+nav .social a svg {
+  width: 100%;
+  height: 100%;
+}
+
+nav .social a svg path, nav .social a svg circle {
+  fill: #ffffff;
+  -webkit-transition: all 0.3s ease;
+  -moz-transition: all 0.3s ease;
+  -o-transition: all 0.3s ease;
+  transition: all 0.3s ease;
+}
+
+nav ul.sub {
+  list-style-type: none;
+  margin-top: 40px;
+  -webkit-transform: translateY(30px);
+  -moz-transform: translateY(30px);
+  -ms-transform: translateY(30px);
+  -o-transform: translateY(30px);
+  transform: translateY(30px);
+  opacity: 0;
+  -webkit-transition: all 0.4s ease;
+  -moz-transition: all 0.4s ease;
+  -o-transition: all 0.4s ease;
+  transition: all 0.4s ease;
+}
+
+/*  Modelos
+========================================== */
+.title-models-cart{
+  font-family: 'Roboto Condensed', sans-serif;
+  font-size: 25px;
+  font-weight: 300;
+}
+.subtitle-models-cart{
+  font-family: 'Roboto Condensed', sans-serif;
+  font-size: 13px;
+  font-weight: 100;
+  min-height: 38px;
+}
+.description-models-cart{
+  font-family: 'Roboto Condensed', sans-serif;
+  font-size: 12px;
+  font-weight: 100;
+  margin-top: 15px;
+  min-height: 55px;
+}
+.descubre-mas-models-button{
+  font-family: 'Roboto Condensed', sans-serif;
+  font-size: 15px;
+  font-weight: 100;
+  margin-top: 17px;
+  color: #333;
+}
+.descubre-mas-models-button:hover{
+  background-color: transparent;
+  color: #333;
+}
+/*  Mundo maserati
+========================================== */
+.mundo-maseratti{
+  margin-top: 40px ;
+}
+
+.mundo-image-wrapper{
+  width: 290px;
+  height: 320px;
+  overflow: hidden;
+  position: relative;
+}
+@media only screen and (min-width: 1380px) {
+  .mundo-image-wrapper{
+    width: 436px!important;
+    height: 466px!important;
+  }
+}
+
+.title-mundo-wrapper{
+  position: absolute;
+  left: 20px;
+  bottom: 10px;
+  color: #ffffff;
+  font-family: 'Roboto Condensed', sans-serif;
+  font-size: 26px;
+}
+.mundo-image-child{
+  width: 100%;
+  height: 100%;
+  background-color: black; /* fallback color */
+  background-position: center center;
+  background-size: cover;
+  transition: all .5s;
+  cursor: pointer;
+}
+
+.mundo-image-wrapper:hover .mundo-image-child,
+.mundo-image-wrapper:focus .mundo-image-child {
+  transform: scale(1.2);
+}
+.store-banner{
+  margin-top: 100px;
+  padding-top: 80px;
+  width: 100%;
+  height: 787px;
+  background-position: center center;
+  background-size: cover;
+  background-image: url("../img/home/maserati_store/store.jpeg");
+}
+
+.store-banner .title{
+  color: white;
+  font-family: 'Roboto Condensed', sans-serif;
+  font-size: 40px;
+}
+.store-banner .description{
+  color: white;
+  font-family: 'Roboto Condensed', sans-serif;
+  font-weight: 200;
+  font-size: 19px;
+}
+.store-banner button{
+  font-family: 'Roboto Condensed', sans-serif;
+  font-weight: 300;
+  font-size: 14px;
+}
+
+/*FOOTER*/
+.footer{
+  background-color: #333;
+  color: #ffffff;
+}
+.footer .link{
+  color: white!important;
+  font-family: 'Roboto Condensed', sans-serif;
+  font-weight: 100;
+  font-size: 12px;
+}
+.footer .link:hover{
+  color: white;
+  text-decoration: none;
+}
+
+.footer .logo {
+  background: transparent url('../img/maserati_logo_white.svg') no-repeat 50% 50%;
+  background-size: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  height: 45px;
+  width: 101px;
+}
+
+/*GHIBLI*/
+.car-white-bg .box{
+  max-width: 500px;
+}
+.car-white-bg p{
+  font-family: 'Roboto Condensed', sans-serif;
+  font-weight: bold;
+}
+/* LEVANTE */
+.motor-bg-gray-500{
+  background: url('../img/modelos/levante/motor.jpg');
+  height: 650px;
+  background-size: inherit;
+  background-repeat: no-repeat;
+  background-position: 100%;
+  background-color: #f2f1f0;
+  background-blend-mode: multiply;
+}
+
+@media (max-width: 768px) {
+  .motor-bg-gray-500{
+    background: transparent!important;
+  }
+}
+
+/*HISTORIA*/
+.bg-first-history{
+  background: url("../img/historia/bg1.jpeg") no-repeat;
+  background-size: cover;
+  width: 100%;
+  height: calc(100vh - 94px);
+}
+.bg-first-history .box{
+ max-width: 500px;
+  padding-left: 8%;
+}
+
+.bg-first-history .title{
+  color: #ffffff;
+  font-size: 40px;
+  font-weight: 300;
+  line-height: 45px;
+  font-family: 'Roboto Condensed', sans-serif;
+}
+.bg-first-history .text{
+  color: #ffffff;
+  font-size: 20px;
+  font-weight: 200;
+  line-height: 25px;
+  font-family: 'Roboto Condensed', sans-serif;
+}
+.bg-history-first{
+  background-color: #ccc;
+}
+.reborn{
+  background-color: #ccc;
+}
+/*PROGRAMA DE MANTENIMIENTO*/
+.bg-grey{
+  background-color: #ccc;
+}
+
+/*CURSOS DE CONDUCCION*/
+.bg-driver{
+  background: url("../img/cursos_conduccion/portada.jpeg") no-repeat;
+  background-size: cover;
+  width: 100%;
+  height: calc(100vh - 94px);
+}
+.bg-driver .box{
+  max-width: 700px;
+  padding-left: 8%;
+}
+.bg-driver .title{
+  color: #ffffff;
+  font-size: 40px;
+  font-weight: 300;
+  line-height: 45px;
+  font-family: 'Roboto Condensed', sans-serif;
+}
+.bg-driver .text{
+  color: #ffffff;
+  font-size: 20px;
+  font-weight: 200;
+  line-height: 25px;
+  font-family: 'Roboto Condensed', sans-serif;
+}
+.logo-club{
+  max-width: 500px;
+  max-height: 300px;
+}
+
+/*CLUB*/
+.dealer-personnel {
+  margin: 0;
+  background-color: #f2f1f0;
+  color: #333;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  padding: 60px;
+  font-size: 0;
+}
+.dealer-personnel .title {
+  font-family: Univers47,sans-serif;
+  font-size: 42px;
+  letter-spacing: -.02em;
+  line-height: 1.1;
+  color: #333;
+  width: auto;
+  display: block;
+  height: auto;
+  margin: 0 0 45px;
+}
+.dealer-personnel .dealer-personnel__parent {
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  display: inline-block;
+  vertical-align: top;
+  width: 50%;
+  padding-bottom: 60px;
+}
+.dealer-personnel .dealer-personnel__parent .dealer-personnel__child.dealer-personnel__imageContainer {
+  max-width: 15pc;
+}
+.dealer-personnel .dealer-personnel__parent .dealer-personnel__child {
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  display: inline-block;
+  vertical-align: top;
+  width: 50%;
+}
+.dealer-personnel .dealer-personnel__parent .dealer-personnel__child.dealer-personnel__textContainer {
+  width: calc(100% - 15pc);
+  vertical-align: top;
+  padding: 20px 0 0 30px;
+}
+.dealer-personnel .dealer-personnel__parent .dealer-personnel__child {
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  display: inline-block;
+  vertical-align: top;
+  width: 50%;
+}
+.dealer-personnel .dealer-personnel__parent .dealer-personnel__child.dealer-personnel__textContainer .name {
+  margin: 0 0 6px;
+  font-size: 18px;
+  letter-spacing: -.02em;
+  line-height: 1.5;
+  text-transform: uppercase;
+}
+.dealer-personnel .dealer-personnel__parent .dealer-personnel__child.dealer-personnel__textContainer .role {
+  font-size: 1pc;
+  letter-spacing: 0;
+  line-height: 1.5;
+  padding-bottom: 30px;
+}
+.dealer-personnel .dealer-personnel__parent .dealer-personnel__child.dealer-personnel__textContainer .text {
+  font-size: 1pc;
+  letter-spacing: 0;
+  line-height: 1.5;
+}
+.dealer-personnel .dealer-personnel__parent .dealer-personnel__child.dealer-personnel__textContainer .text {
+  font-size: 1pc;
+  letter-spacing: 0;
+  line-height: 1.5;
+}
+ .cta-container {
+  margin: 0;
+}
+ .cta-container .cta {
+  display: inline-block;
+  margin: 30px 11px 0 0;
+}
+.cta.border-grey {
+  border: 1px solid #333;
+  width: 100%;
+  height: 100%;
+}
+.cta, .cta a {
+  color: #000;
+  display: inline-block;
+  font-size: 13px;
+  padding: 15px;
+}
+.cta {
+  background: #fff;
+  border-radius: 2px;
+  text-align: center;
+}
+@media (max-width: 767px) {
+  .dealer-personnel .dealer-personnel__parent, .dealer-personnel .dealer-personnel__parent:nth-child(2n), .dealer-personnel .dealer-personnel__parent:nth-child(odd) {
+    padding: 0 20px;
+    margin: 0;
+  }
+}
+@media (max-width: 1023px) {
+  .dealer-personnel .dealer-personnel__parent {
+    width: 100%;
+  }
+}
+@media (max-width: 767px) {
+  .dealer-personnel .dealer-personnel__parent .dealer-personnel__child.dealer-personnel__imageContainer {
+    width: 100%;
+    max-width: none;
+  }
+  .dealer-personnel .dealer-personnel__parent .dealer-personnel__child.dealer-personnel__textContainer {
+    width: 100%;
+    padding: 0;
+  }
+}
+
+/*EMERGILDO*/
+.video-container {
+  position: relative;
+  padding-bottom: 53.55%;
+  padding-top: 30px; height: 0; overflow: hidden;
+}
+.video-front,
+.video-front iframe,
+.video-front object,
+.video-front embed {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+.video-front{
+  background: no-repeat;
+  background-size: cover;
+  cursor: pointer;
+}
+.video-front .box{
+  width: 500px;
+  padding: 60px;
+}
+.video-front h1{
+  color: #f2f1f0;
+  font-weight: 300;
+}
+.video-front p{
+  color: #f2f1f0;
+  font-weight: 300;
+}
+.play-button{
+  background: transparent ;
+  background-size: 100%;
+  cursor: pointer;
+  height: 100px;
+  width: 100px;
+  color: #f2f1f0;
+}
+
+.collection .col-md-6{
+  font-weight: 300;
+  font-size: 18px;
+  margin-top: 50px;
+}
+
+/*SHELL*/
+/*HISTORIA*/
+.bg-first-shell{
+  background: url("../img/shell/1.jpeg") no-repeat;
+  background-size: cover;
+  width: 100%;
+  height: calc(100vh - 94px);
+}
+.bg-first-shell .box{
+  max-width: 500px;
+  padding-left: 8%;
+}
+
+.bg-first-shell .title{
+  color: #ffffff;
+  font-size: 40px;
+  font-weight: 300;
+  line-height: 45px;
+  font-family: 'Roboto Condensed', sans-serif;
+}
+.bg-first-shell .text{
+  color: #ffffff;
+  font-size: 20px;
+  font-weight: 200;
+  line-height: 25px;
+  font-family: 'Roboto Condensed', sans-serif;
+}
+
+
